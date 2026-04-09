@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shubh Panchal | Portfolio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #0a0a0a;
+    --bg-card: #111111;
+    --bg-card-hover: #1a1a1a;
+    --text: #e5e5e5;
+    --text-muted: #888888;
+    --accent: #3b82f6;
+    --accent-dim: rgba(59, 130, 246, 0.15);
+    --border: #222222;
+    --tag-bg: #1e1e1e;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+  }
+  .nav-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center;
+    height: 60px;
+  }
+  .nav-logo { font-weight: 700; font-size: 1.1rem; color: var(--text); text-decoration: none; }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: var(--text-muted); text-decoration: none; font-size: 0.875rem;
+    font-weight: 500; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  /* SECTIONS */
+  section { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
+  .section-label {
+    font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.75rem;
+  }
+  .section-title { font-size: 1.75rem; font-weight: 700; margin-bottom: 2.5rem; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh; display: flex; flex-direction: column;
+    justify-content: center; padding-top: 60px;
+  }
+  .hero-top { display: flex; align-items: center; gap: 2rem; margin-bottom: 1.5rem; }
+  .hero-avatar {
+    width: 90px; height: 90px; border-radius: 50%;
+    border: 2px solid var(--border); object-fit: cover;
+  }
+  .hero-greeting { font-size: 1rem; color: var(--accent); font-weight: 500; margin-bottom: 0.75rem; }
+  .hero h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; line-height: 1.15; margin-bottom: 1.25rem; }
+  .hero h1 .highlight { color: var(--accent); }
+  .hero-desc {
+    font-size: 1.1rem; color: var(--text-muted); max-width: 600px;
+    line-height: 1.7; margin-bottom: 2rem;
+  }
+  .hero-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.65rem 1.5rem; border-radius: 8px;
+    font-size: 0.875rem; font-weight: 500; text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: #2563eb; }
+  .btn-ghost { border: 1px solid var(--border); color: var(--text); }
+  .btn-ghost:hover { border-color: var(--text-muted); background: var(--bg-card); }
+
+  /* ABOUT */
+  .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .about-text { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
+  .about-text p { margin-bottom: 1rem; }
+  .about-details { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .detail-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.25rem;
+  }
+  .detail-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.25rem; }
+  .detail-value { font-size: 0.95rem; font-weight: 600; }
+
+  /* EXPERIENCE */
+  .exp-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem;
+    transition: border-color 0.2s;
+  }
+  .exp-card:hover { border-color: var(--accent); }
+  .exp-header { display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem; }
+  .exp-role { font-size: 1.15rem; font-weight: 600; }
+  .exp-org { color: var(--accent); font-size: 0.95rem; }
+  .exp-date { color: var(--text-muted); font-size: 0.8rem; font-weight: 500; white-space: nowrap; }
+  .exp-desc { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1rem; }
+  .exp-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .tag {
+    background: var(--tag-bg); color: var(--text-muted); border: 1px solid var(--border);
+    padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 500;
+  }
+
+  /* PROJECTS */
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+  .project-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.75rem;
+    transition: all 0.2s; display: flex; flex-direction: column;
+  }
+  .project-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .project-icon { font-size: 1.5rem; margin-bottom: 1rem; }
+  .project-name { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+  .project-desc { color: var(--text-muted); font-size: 0.875rem; line-height: 1.7; flex: 1; margin-bottom: 1rem; }
+  .project-meta { display: flex; justify-content: space-between; align-items: center; }
+  .project-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .project-link {
+    color: var(--accent); text-decoration: none; font-size: 0.8rem; font-weight: 500;
+    display: flex; align-items: center; gap: 0.25rem;
+  }
+  .project-link:hover { text-decoration: underline; }
+
+  /* SKILLS */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
+  .skill-group {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.5rem;
+  }
+  .skill-group-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 1rem; }
+  .skill-items { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+
+  /* EDUCATION */
+  .edu-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem;
+  }
+  .edu-degree { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.25rem; }
+  .edu-school { color: var(--accent); font-size: 0.95rem; margin-bottom: 0.25rem; }
+  .edu-info { color: var(--text-muted); font-size: 0.85rem; }
+
+  /* CONTACT */
+  .contact-section { text-align: center; padding-bottom: 6rem; }
+  .contact-desc { color: var(--text-muted); font-size: 1rem; max-width: 500px; margin: 0 auto 2rem; }
+  .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+  /* FOOTER */
+  footer {
+    text-align: center; padding: 2rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted); font-size: 0.8rem;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .about-content { grid-template-columns: 1fr; }
+    .nav-links { gap: 1rem; }
+    .nav-links a { font-size: 0.8rem; }
+    section { padding: 3.5rem 1.25rem; }
+    .projects-grid { grid-template-columns: 1fr; }
+  }
+
+  /* SUBTLE ANIMATION */
+  .fade-in {
+    opacity: 0; transform: translateY(20px);
+    animation: fadeUp 0.6s ease forwards;
+  }
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .delay-1 { animation-delay: 0.1s; }
+  .delay-2 { animation-delay: 0.2s; }
+  .delay-3 { animation-delay: 0.3s; }
+  .delay-4 { animation-delay: 0.4s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">shubh<span>.dev</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="fade-in">
+    <div class="hero-top">
+      <img src="https://avatars.githubusercontent.com/u/240522452?v=4" alt="Shubh Panchal" class="hero-avatar">
+      <div>
+        <p class="hero-greeting">Hi, I'm</p>
+        <h1>Shubh Panchal<span class="highlight">.</span></h1>
+      </div>
+    </div>
+    <p class="hero-desc">
+      MS in Electrical and Computer Engineering at Northeastern University. 
+      I work at the intersection of hardware and software, building things with FPGAs, embedded systems, and high performance computing.
+    </p>
+    <div class="hero-links">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="https://drive.google.com/file/d/1QXg_vUCwvIZdcchrD-KzkBAHLN1eNFIq/view?usp=drive_link" class="btn btn-ghost" target="_blank">Resume</a>
+      <a href="https://github.com/spanchal8" class="btn btn-ghost" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/shubhpanchal8103" class="btn btn-ghost" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-label fade-in">About</p>
+  <h2 class="section-title fade-in">A bit about me</h2>
+  <div class="about-content">
+    <div class="about-text fade-in">
+      <p>I'm a first-year MS student in Electrical and Computer Engineering at Northeastern University, concentrating in Hardware and Software for Machine Intelligence. My work spans FPGA development, embedded firmware, computer architecture, and GPU-accelerated computing.</p>
+      <p>During my research internship at MeitY, I designed custom AXI4 IP cores and built an In-Memory Compute architecture on Xilinx Zynq SoCs. I've also built hardware-accelerated image processing pipelines, a hybrid load value predictor validated across 17.7M+ operations, and benchmarked parallel computing strategies on NVIDIA GPUs.</p>
+      <p>I'm currently seeking a 4 to 8 month co-op or internship for Summer/Fall 2026 in firmware engineering, embedded systems, FPGA/RTL design, computer architecture, or HPC.</p>
+    </div>
+    <div class="about-details fade-in delay-1">
+      <div class="detail-card">
+        <p class="detail-label">Degree</p>
+        <p class="detail-value">MS in ECE</p>
+      </div>
+      <div class="detail-card">
+        <p class="detail-label">University</p>
+        <p class="detail-value">Northeastern</p>
+      </div>
+      <div class="detail-card">
+        <p class="detail-label">GPA</p>
+        <p class="detail-value">4.0 / 4.0</p>
+      </div>
+      <div class="detail-card">
+        <p class="detail-label">Graduation</p>
+        <p class="detail-value">May 2027</p>
+      </div>
+      <div class="detail-card">
+        <p class="detail-label">Focus</p>
+        <p class="detail-value">HW/SW for ML</p>
+      </div>
+      <div class="detail-card">
+        <p class="detail-label">Location</p>
+        <p class="detail-value">Boston, MA</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <p class="section-label fade-in">Experience</p>
+  <h2 class="section-title fade-in">Where I've worked</h2>
+
+  <div class="exp-card fade-in">
+    <div class="exp-header">
+      <div>
+        <p class="exp-role">Research Intern — FPGA & SoC Development</p>
+        <p class="exp-org">Ministry of Electronics & Information Technology (MeitY)</p>
+      </div>
+      <span class="exp-date">May 2024 — Jul 2024</span>
+    </div>
+    <p class="exp-desc">
+      Designed custom AXI4-Lite and AXI4-Stream IP cores in FPGA Programmable Logic and established hardware-software communication between ARM Processing System and PL on Xilinx Zynq SoC. Built bare-metal C applications and device driver interfaces to control FPGA-accelerated processing pipelines via memory-mapped I/O. Implemented In-Memory Compute architecture for accelerated matrix operations, validated through hardware co-simulation using Vivado HLS and Vitis. Performed system-level integration and debugging using Vivado ILA, JTAG, and serial console.
+    </p>
+    <div class="exp-tags">
+      <span class="tag">Xilinx Zynq</span>
+      <span class="tag">AXI4</span>
+      <span class="tag">Vivado</span>
+      <span class="tag">Vitis</span>
+      <span class="tag">C</span>
+      <span class="tag">FPGA</span>
+      <span class="tag">ILA</span>
+      <span class="tag">JTAG</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="section-label fade-in">Projects</p>
+  <h2 class="section-title fade-in">Things I've built</h2>
+  <div class="projects-grid">
+
+    <div class="project-card fade-in">
+      <div class="project-icon">⚡</div>
+      <p class="project-name">In-Memory Compute on Zynq SoC</p>
+      <p class="project-desc">Custom AXI4-Lite/Stream IP cores with bare-metal C drivers for accelerated matrix operations on Xilinx Zynq. Full PS-PL pipeline with IMC architecture, debugged using Vivado ILA and JTAG.</p>
+      <div class="project-meta">
+        <div class="project-tags">
+          <span class="tag">Vivado</span>
+          <span class="tag">Vitis</span>
+          <span class="tag">C</span>
+          <span class="tag">AXI4</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card fade-in delay-1">
+      <div class="project-icon">🖼️</div>
+      <p class="project-name">FPGA Image Processing Pipeline</p>
+      <p class="project-desc">Custom image processing IP in Verilog for 3x3 convolution-based blur filtering on PYNQ-Z2. Implemented AXI DMA and VDMA controllers for high-throughput memory-to-stream transfers enabling real-time processing.</p>
+      <div class="project-meta">
+        <div class="project-tags">
+          <span class="tag">Verilog</span>
+          <span class="tag">PYNQ-Z2</span>
+          <span class="tag">DMA</span>
+          <span class="tag">VDMA</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card fade-in delay-2">
+      <div class="project-icon">🧠</div>
+      <p class="project-name">Hybrid Load Value Predictor</p>
+      <p class="project-desc">Combined LVP, SVP, and ACVP strategies under a confidence-based meta-predictor. Achieved 87-96% accuracy across 17.7M+ load operations with only 57KB storage. Debugged hash collisions using Pin instrumentation.</p>
+      <div class="project-meta">
+        <div class="project-tags">
+          <span class="tag">C</span>
+          <span class="tag">Pin</span>
+          <span class="tag">Computer Arch</span>
+        </div>
+        <a href="https://github.com/spanchal8/Hybrid-Load-Value-Predictor" class="project-link" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card fade-in delay-3">
+      <div class="project-icon">🚀</div>
+      <p class="project-name">K-Means: CPU vs GPU Benchmarking</p>
+      <p class="project-desc">Benchmarked K-Means clustering across sequential C, OpenMP, and CUDA on the NYC Taxi dataset. Profiled on Northeastern's Explorer cluster using NVIDIA P100/V100 GPUs with VTune and Nsight.</p>
+      <div class="project-meta">
+        <div class="project-tags">
+          <span class="tag">CUDA</span>
+          <span class="tag">OpenMP</span>
+          <span class="tag">C</span>
+          <span class="tag">HPC</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card fade-in delay-4">
+      <div class="project-icon">🌐</div>
+      <p class="project-name">UN Voting Pattern Prediction</p>
+      <p class="project-desc">ML pipeline predicting global political alignments using UN voting records, World Bank indicators, and military spending data. 86.6% accuracy with Random Forest, 0.927 ROC-AUC across 120K+ observations.</p>
+      <div class="project-meta">
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">scikit-learn</span>
+          <span class="tag">pandas</span>
+        </div>
+        <a href="https://github.com/spanchal8/Predicting-Global-Political-Alignments-through-voting" class="project-link" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-icon">⚽</div>
+      <p class="project-name">Soccer Rules RAG Chatbot</p>
+      <p class="project-desc">Retrieval-Augmented Generation chatbot for FIFA rulebook queries using HuggingFace transformers and FAISS vector database for semantic search over document chunks.</p>
+      <div class="project-meta">
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">HuggingFace</span>
+          <span class="tag">FAISS</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <p class="section-label fade-in">Skills</p>
+  <h2 class="section-title fade-in">What I work with</h2>
+  <div class="skills-grid">
+
+    <div class="skill-group fade-in">
+      <p class="skill-group-title">Languages</p>
+      <div class="skill-items">
+        <span class="tag">C</span>
+        <span class="tag">Verilog</span>
+        <span class="tag">Python</span>
+        <span class="tag">CUDA</span>
+        <span class="tag">RISC-V Assembly</span>
+        <span class="tag">MATLAB</span>
+      </div>
+    </div>
+
+    <div class="skill-group fade-in delay-1">
+      <p class="skill-group-title">FPGA & Embedded</p>
+      <div class="skill-items">
+        <span class="tag">Xilinx Zynq SoC</span>
+        <span class="tag">Vivado</span>
+        <span class="tag">Vitis</span>
+        <span class="tag">AXI4 Protocols</span>
+        <span class="tag">DMA / VDMA</span>
+        <span class="tag">PYNQ-Z2</span>
+        <span class="tag">Vivado ILA</span>
+      </div>
+    </div>
+
+    <div class="skill-group fade-in delay-2">
+      <p class="skill-group-title">HPC & Architecture</p>
+      <div class="skill-items">
+        <span class="tag">OpenMP</span>
+        <span class="tag">MPI</span>
+        <span class="tag">CUDA</span>
+        <span class="tag">AVX-512</span>
+        <span class="tag">VTune</span>
+        <span class="tag">Nsight</span>
+        <span class="tag">Pin</span>
+        <span class="tag">SLURM</span>
+      </div>
+    </div>
+
+    <div class="skill-group fade-in delay-3">
+      <p class="skill-group-title">Tools & Platforms</p>
+      <div class="skill-items">
+        <span class="tag">Git</span>
+        <span class="tag">GCC</span>
+        <span class="tag">GDB</span>
+        <span class="tag">Linux</span>
+        <span class="tag">Make</span>
+        <span class="tag">LaTeX</span>
+        <span class="tag">JTAG</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <p class="section-label fade-in">Education</p>
+  <h2 class="section-title fade-in">Academic background</h2>
+
+  <div class="edu-card fade-in">
+    <p class="edu-degree">MS in Electrical and Computer Engineering</p>
+    <p class="edu-school">Northeastern University, Boston</p>
+    <p class="edu-info">Concentration: Hardware and Software for Machine Intelligence · GPA: 4.0 · Expected May 2027</p>
+    <p class="edu-info" style="margin-top:0.5rem; color: var(--text-muted);">Coursework: Computer Architecture, High Performance Computing, Power Electronics, Machine Learning</p>
+  </div>
+
+  <div class="edu-card fade-in delay-1">
+    <p class="edu-degree">B.Tech in Electrical Engineering</p>
+    <p class="edu-school">Nirma University, Ahmedabad, India</p>
+    <p class="edu-info">Coursework: Embedded Systems, VLSI Design, Digital Signal Processing, Modern Processor Architecture, Analog Electronics</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <p class="section-label fade-in">Contact</p>
+  <h2 class="section-title fade-in">Let's connect</h2>
+  <p class="contact-desc fade-in">I'm currently looking for a co-op or internship for Summer/Fall 2026. Feel free to reach out.</p>
+  <div class="contact-links fade-in delay-1">
+    <a href="mailto:panchal.shu@northeastern.edu" class="btn btn-primary">Email Me</a>
+    <a href="https://www.linkedin.com/in/shubhpanchal8103" class="btn btn-ghost" target="_blank">LinkedIn</a>
+    <a href="https://github.com/spanchal8" class="btn btn-ghost" target="_blank">GitHub</a>
+  </div>
+</section>
+
+<footer>
+  <p>Built by Shubh Panchal · 2026</p>
+</footer>
+
+</body>
+</html>
