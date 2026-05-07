@@ -31,7 +31,6 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* NAV */
   nav {
     position: fixed; top: 0; width: 100%; z-index: 100;
     background: rgba(10,10,10,0.85);
@@ -53,7 +52,6 @@
   }
   .nav-links a:hover { color: var(--text); }
 
-  /* SECTIONS */
   section { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
   .section-label {
     font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
@@ -61,7 +59,6 @@
   }
   .section-title { font-size: 1.75rem; font-weight: 700; margin-bottom: 2.5rem; }
 
-  /* HERO */
   .hero {
     min-height: 100vh; display: flex; flex-direction: column;
     justify-content: center; padding-top: 60px;
@@ -90,7 +87,6 @@
   .btn-ghost { border: 1px solid var(--border); color: var(--text); }
   .btn-ghost:hover { border-color: var(--text-muted); background: var(--bg-card); }
 
-  /* ABOUT */
   .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
   .about-text { color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; }
   .about-text p { margin-bottom: 1rem; }
@@ -102,7 +98,6 @@
   .detail-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin-bottom: 0.25rem; }
   .detail-value { font-size: 0.95rem; font-weight: 600; }
 
-  /* EXPERIENCE */
   .exp-card {
     background: var(--bg-card); border: 1px solid var(--border);
     border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem;
@@ -120,7 +115,6 @@
     padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 500;
   }
 
-  /* PROJECTS */
   .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
   .project-card {
     background: var(--bg-card); border: 1px solid var(--border);
@@ -139,7 +133,6 @@
   }
   .project-link:hover { text-decoration: underline; }
 
-  /* SKILLS */
   .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.5rem; }
   .skill-group {
     background: var(--bg-card); border: 1px solid var(--border);
@@ -148,7 +141,6 @@
   .skill-group-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 1rem; }
   .skill-items { display: flex; flex-wrap: wrap; gap: 0.5rem; }
 
-  /* EDUCATION */
   .edu-card {
     background: var(--bg-card); border: 1px solid var(--border);
     border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem;
@@ -157,19 +149,16 @@
   .edu-school { color: var(--accent); font-size: 0.95rem; margin-bottom: 0.25rem; }
   .edu-info { color: var(--text-muted); font-size: 0.85rem; }
 
-  /* CONTACT */
   .contact-section { text-align: center; padding-bottom: 6rem; }
   .contact-desc { color: var(--text-muted); font-size: 1rem; max-width: 500px; margin: 0 auto 2rem; }
   .contact-links { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 
-  /* FOOTER */
   footer {
     text-align: center; padding: 2rem;
     border-top: 1px solid var(--border);
     color: var(--text-muted); font-size: 0.8rem;
   }
 
-  /* RESPONSIVE */
   @media (max-width: 768px) {
     .about-content { grid-template-columns: 1fr; }
     .nav-links { gap: 1rem; }
@@ -178,7 +167,6 @@
     .projects-grid { grid-template-columns: 1fr; }
   }
 
-  /* SUBTLE ANIMATION */
   .fade-in {
     opacity: 0; transform: translateY(20px);
     animation: fadeUp 0.6s ease forwards;
@@ -194,7 +182,6 @@
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a href="#" class="nav-logo">shubh<span>.dev</span></a>
@@ -208,7 +195,6 @@
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="fade-in">
     <div class="hero-top">
@@ -231,7 +217,6 @@
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about">
   <p class="section-label fade-in">About</p>
   <h2 class="section-title fade-in">A bit about me</h2>
@@ -270,7 +255,6 @@
   </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section id="experience">
   <p class="section-label fade-in">Experience</p>
   <h2 class="section-title fade-in">Where I've worked</h2>
@@ -319,7 +303,6 @@
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <p class="section-label fade-in">Projects</p>
   <h2 class="section-title fade-in">Things I've built</h2>
@@ -424,10 +407,42 @@
       </div>
     </div>
 
+    <!-- NEW: RAG Document Q&A System -->
+    <div class="project-card fade-in delay-1">
+      <div class="project-icon">📄</div>
+      <p class="project-name">RAG Document Q&A System</p>
+      <p class="project-desc">Production-grade RAG pipeline using LangGraph's StateGraph for explicit control flow — retrieve, grade relevance, generate, check for hallucinations, and rewrite queries when needed. Supports PDF and text uploads with FAISS semantic search, configurable LLM backends (GPT-4o-mini or local HuggingFace), a Flask REST API, and a React chat dashboard with source attribution.</p>
+      <div class="project-meta">
+        <div class="project-tags">
+          <span class="tag">LangGraph</span>
+          <span class="tag">LangChain</span>
+          <span class="tag">FAISS</span>
+          <span class="tag">Flask</span>
+          <span class="tag">React</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEW: Multi-Provider LLM Gateway -->
+    <div class="project-card fade-in delay-2">
+      <div class="project-icon">⚖️</div>
+      <p class="project-name">Multi-Provider LLM Gateway</p>
+      <p class="project-desc">FastAPI service that fans out prompts concurrently to HuggingFace (Mistral-7B), Google Gemini, and Groq (Llama 3.1) via ThreadPoolExecutor. Uses the adapter pattern for a unified provider interface. Compares latency, token usage, and cost side-by-side with aggregate analytics and a live React dashboard.</p>
+      <div class="project-meta">
+        <div class="project-tags">
+          <span class="tag">FastAPI</span>
+          <span class="tag">Python</span>
+          <span class="tag">HuggingFace</span>
+          <span class="tag">Gemini</span>
+          <span class="tag">Groq</span>
+          <span class="tag">React</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <p class="section-label fade-in">Skills</p>
   <h2 class="section-title fade-in">What I work with</h2>
@@ -482,7 +497,9 @@
         <span class="tag">Linux</span>
         <span class="tag">Make</span>
         <span class="tag">Flask</span>
+        <span class="tag">FastAPI</span>
         <span class="tag">React</span>
+        <span class="tag">LangChain</span>
         <span class="tag">LaTeX</span>
         <span class="tag">JTAG</span>
       </div>
@@ -491,7 +508,6 @@
   </div>
 </section>
 
-<!-- EDUCATION -->
 <section id="education">
   <p class="section-label fade-in">Education</p>
   <h2 class="section-title fade-in">Academic background</h2>
@@ -510,7 +526,6 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact" class="contact-section">
   <p class="section-label fade-in">Contact</p>
   <h2 class="section-title fade-in">Let's connect</h2>
