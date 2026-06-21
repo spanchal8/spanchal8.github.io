@@ -205,8 +205,7 @@
       </div>
     </div>
     <p class="hero-desc">
-      MS in Electrical and Computer Engineering at Northeastern University.
-      I build agentic AI systems, LLM pipelines, and RAG applications, with a strong foundation in computer architecture, HPC, and FPGA development.
+      MS in ECE at Northeastern. I work the stack from silicon to inference. LLM pipelines, RAG systems, and agentic workflows, built on real computer architecture, HPC, and FPGA experience. Most candidates pick one side. I do both.
     </p>
     <div class="hero-links">
       <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -263,30 +262,33 @@
   <div class="exp-card fade-in">
     <div class="exp-header">
       <div>
-        <p class="exp-role">R&D Intern — Embedded Firmware & Power Systems</p>
+        <p class="exp-role">R&D Intern</p>
         <p class="exp-org">Nessa Illumination Technologies</p>
       </div>
-      <span class="exp-date">Dec 2024 — Apr 2025</span>
+      <span class="exp-date">Jan 2025 to Apr 2025</span>
     </div>
     <p class="exp-desc">
-      Developed firmware for solar street light controller with MPPT charge controller and RMS card. Implemented battery charging algorithms for efficient energy harvesting and power management. Enabled GPRS connectivity via M2M SIMs for remote battery monitoring with secure HTTPS protocols. Conducted hardware verification testing and serial debugging using Docklight.
+      Built an AI-powered resume-screening web application for a recruiting workflow tool. Integrated Azure OpenAI as an LLM judge alongside TF-IDF cosine similarity for hybrid candidate matching against job descriptions. Designed a modular Flask backend with separate components for PDF and DOCX parsing, filtering, scoring, and ATS-compliance checking, coordinated through an orchestrator pattern using Abstract Base Class and Factory design patterns. Built a Streamlit frontend exposing dual filtering tracks (LLM-based and rule-based) for AI-assisted or deterministic keyword-based screening.
     </p>
     <div class="exp-tags">
-      <span class="tag">Embedded C</span>
-      <span class="tag">MPPT</span>
-      <span class="tag">Power Management</span>
-      <span class="tag">GPRS</span>
-      <span class="tag">Serial Debugging</span>
+      <span class="tag">Python</span>
+      <span class="tag">Flask</span>
+      <span class="tag">Azure OpenAI</span>
+      <span class="tag">LLM</span>
+      <span class="tag">TF-IDF</span>
+      <span class="tag">Streamlit</span>
+      <span class="tag">PyMuPDF</span>
+      <span class="tag">REST API</span>
     </div>
   </div>
 
   <div class="exp-card fade-in">
     <div class="exp-header">
       <div>
-        <p class="exp-role">Research Intern — FPGA & SoC Development</p>
+        <p class="exp-role">Research Intern</p>
         <p class="exp-org">Ministry of Electronics & Information Technology (MeitY)</p>
       </div>
-      <span class="exp-date">May 2024 — Jul 2024</span>
+      <span class="exp-date">May 2024 to Jul 2024</span>
     </div>
     <p class="exp-desc">
       Designed custom AXI4-Lite and AXI4-Stream IP cores in FPGA Programmable Logic and established hardware-software communication between ARM Processing System and PL on Xilinx Zynq SoC. Built bare-metal C applications and device driver interfaces to control FPGA-accelerated processing pipelines via memory-mapped I/O. Implemented In-Memory Compute architecture for accelerated matrix operations, validated through hardware co-simulation using Vivado HLS and Vitis. Performed system-level integration and debugging using Vivado ILA, JTAG, and serial console.
@@ -310,108 +312,9 @@
   <div class="projects-grid">
 
     <div class="project-card fade-in">
-      <div class="project-icon">⚡</div>
-      <p class="project-name">In-Memory Compute on Zynq SoC</p>
-      <p class="project-desc">Custom AXI4-Lite/Stream IP cores with bare-metal C drivers for accelerated matrix operations on Xilinx Zynq. Full PS-PL pipeline with IMC architecture, debugged using Vivado ILA and JTAG.</p>
-      <div class="project-meta">
-        <div class="project-tags">
-          <span class="tag">Vivado</span>
-          <span class="tag">Vitis</span>
-          <span class="tag">C</span>
-          <span class="tag">AXI4</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-card fade-in delay-1">
-      <div class="project-icon">🖼️</div>
-      <p class="project-name">FPGA Image Processing Pipeline</p>
-      <p class="project-desc">Custom image processing IP in Verilog for 3x3 convolution-based blur filtering on PYNQ-Z2. Implemented AXI DMA and VDMA controllers for high-throughput memory-to-stream transfers enabling real-time processing.</p>
-      <div class="project-meta">
-        <div class="project-tags">
-          <span class="tag">Verilog</span>
-          <span class="tag">PYNQ-Z2</span>
-          <span class="tag">DMA</span>
-          <span class="tag">VDMA</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-card fade-in delay-2">
-      <div class="project-icon">🧠</div>
-      <p class="project-name">Hybrid Load Value Predictor</p>
-      <p class="project-desc">Combined LVP, SVP, and ACVP strategies under a confidence-based meta-predictor. Achieved 87-96% accuracy across 17.7M+ load operations with only 57KB storage. Debugged hash collisions using Pin instrumentation.</p>
-      <div class="project-meta">
-        <div class="project-tags">
-          <span class="tag">C</span>
-          <span class="tag">Pin</span>
-          <span class="tag">Computer Arch</span>
-        </div>
-        <a href="https://github.com/spanchal8/Hybrid-Load-Value-Predictor" class="project-link" target="_blank">GitHub →</a>
-      </div>
-    </div>
-
-    <div class="project-card fade-in delay-3">
-      <div class="project-icon">🚀</div>
-      <p class="project-name">K-Means: CPU vs GPU Benchmarking</p>
-      <p class="project-desc">Benchmarked K-Means clustering across sequential C, OpenMP, and CUDA on the NYC Taxi dataset. Profiled on Northeastern's Explorer cluster using NVIDIA P100/V100 GPUs with VTune and Nsight.</p>
-      <div class="project-meta">
-        <div class="project-tags">
-          <span class="tag">CUDA</span>
-          <span class="tag">OpenMP</span>
-          <span class="tag">C</span>
-          <span class="tag">HPC</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-card fade-in delay-4">
-      <div class="project-icon">🖥️</div>
-      <p class="project-name">GPU Job Scheduler & Provisioning System</p>
-      <p class="project-desc">GPU cluster management system with real-time nvidia-smi monitoring, 4 scheduling algorithms (FIFO, SJF, Priority, Fair Share), and a dispatcher that assigns jobs to the least-loaded GPU by memory and utilization. Thread-safe Python backend with Flask REST API and a live React dashboard for GPU metrics and queue visibility.</p>
-      <div class="project-meta">
-        <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Flask</span>
-          <span class="tag">React</span>
-          <span class="tag">nvidia-smi</span>
-          <span class="tag">Threading</span>
-        </div>
-        <a href="https://github.com/spanchal8/gpu-scheduler" class="project-link" target="_blank">GitHub →</a>
-      </div>
-    </div>
-
-    <div class="project-card fade-in delay-4">
-      <div class="project-icon">🌐</div>
-      <p class="project-name">UN Voting Pattern Prediction</p>
-      <p class="project-desc">ML pipeline predicting global political alignments using UN voting records, World Bank indicators, and military spending data. 86.6% accuracy with Random Forest, 0.927 ROC-AUC across 120K+ observations.</p>
-      <div class="project-meta">
-        <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">scikit-learn</span>
-          <span class="tag">pandas</span>
-        </div>
-        <a href="https://github.com/spanchal8/Predicting-Global-Political-Alignments-through-voting" class="project-link" target="_blank">GitHub →</a>
-      </div>
-    </div>
-
-    <div class="project-card fade-in">
-      <div class="project-icon">⚽</div>
-      <p class="project-name">Soccer Rules RAG Chatbot</p>
-      <p class="project-desc">Retrieval-Augmented Generation chatbot for FIFA rulebook queries using HuggingFace transformers and FAISS vector database for semantic search over document chunks.</p>
-      <div class="project-meta">
-        <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">HuggingFace</span>
-          <span class="tag">FAISS</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="project-card fade-in delay-1">
       <div class="project-icon">📄</div>
       <p class="project-name">RAG Document Q&A System</p>
-      <p class="project-desc">Production-grade RAG pipeline using LangGraph's StateGraph for explicit control flow — retrieve, grade relevance, generate, check for hallucinations, and rewrite queries when needed. Supports PDF and text uploads with FAISS semantic search, configurable LLM backends (GPT-4o-mini or local HuggingFace), a Flask REST API, and a React chat dashboard with source attribution.</p>
+      <p class="project-desc">Production-grade RAG pipeline using LangGraph's StateGraph for explicit control flow. Retrieve, grade relevance, generate, check for hallucinations, and rewrite queries when needed. Supports PDF and text uploads with FAISS semantic search, configurable LLM backends (GPT-4o-mini or local HuggingFace), a Flask REST API, and a React chat dashboard with source attribution.</p>
       <div class="project-meta">
         <div class="project-tags">
           <span class="tag">LangGraph</span>
@@ -424,7 +327,7 @@
       </div>
     </div>
 
-    <div class="project-card fade-in delay-2">
+    <div class="project-card fade-in delay-1">
       <div class="project-icon">⚖️</div>
       <p class="project-name">Multi-Provider LLM Gateway</p>
       <p class="project-desc">FastAPI service that fans out prompts concurrently to HuggingFace (Mistral-7B), Google Gemini, and Groq (Llama 3.1) via ThreadPoolExecutor. Uses the adapter pattern for a unified provider interface. Compares latency, token usage, and cost side-by-side with aggregate analytics and a live React dashboard.</p>
@@ -441,6 +344,122 @@
       </div>
     </div>
 
+    <div class="project-card fade-in delay-2">
+      <div class="project-icon">📦</div>
+      <p class="project-name">Distributed Job Queue</p>
+      <p class="project-desc">SQS-style distributed task queue modeling Amazon SQS and Celery internals. At-least-once delivery via atomic Redis Lua scripts, visibility-timeout crash recovery, exponential backoff, dead-letter queue, idempotency keys, and priority and delayed scheduling. Load-tested 20,000 jobs to zero backlog. Scaled 3 to 10 workers for 3.3x near-linear throughput (15 to 50 jobs/sec). Live Grafana dashboard tracking p50/p95/p99 latency, deployed via one-command Docker Compose.</p>
+      <div class="project-meta">
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Redis</span>
+          <span class="tag">Flask</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Prometheus</span>
+          <span class="tag">Grafana</span>
+        </div>
+        <a href="https://github.com/spanchal8/distributed-job-queue" class="project-link" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card fade-in delay-3">
+      <div class="project-icon">🖥️</div>
+      <p class="project-name">GPU Job Scheduler & Provisioning System</p>
+      <p class="project-desc">GPU cluster management system with real-time nvidia-smi monitoring, 4 scheduling algorithms (FIFO, SJF, Priority, Fair Share), and a dispatcher that assigns jobs to the least-loaded GPU by memory and utilization. Thread-safe Python backend with Flask REST API and a live React dashboard for GPU metrics and queue visibility.</p>
+      <div class="project-meta">
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Flask</span>
+          <span class="tag">React</span>
+          <span class="tag">nvidia-smi</span>
+          <span class="tag">Threading</span>
+        </div>
+        <a href="https://github.com/spanchal8/gpu-scheduler" class="project-link" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card fade-in delay-4">
+      <div class="project-icon">⚽</div>
+      <p class="project-name">Soccer Rules RAG Chatbot</p>
+      <p class="project-desc">Retrieval-Augmented Generation chatbot for FIFA rulebook queries using HuggingFace transformers and FAISS vector database for semantic search over document chunks.</p>
+      <div class="project-meta">
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">HuggingFace</span>
+          <span class="tag">FAISS</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card fade-in">
+      <div class="project-icon">🌐</div>
+      <p class="project-name">UN Voting Pattern Prediction</p>
+      <p class="project-desc">ML pipeline predicting global political alignments using UN voting records, World Bank indicators, and military spending data. 86.6% accuracy with Random Forest, 0.927 ROC-AUC across 120K+ observations.</p>
+      <div class="project-meta">
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">scikit-learn</span>
+          <span class="tag">pandas</span>
+        </div>
+        <a href="https://github.com/spanchal8/Predicting-Global-Political-Alignments-through-voting" class="project-link" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
+    <div class="project-card fade-in delay-1">
+      <div class="project-icon">🚀</div>
+      <p class="project-name">K-Means: CPU vs GPU Benchmarking</p>
+      <p class="project-desc">Benchmarked K-Means clustering across sequential C, OpenMP, and CUDA on the NYC Taxi dataset. Profiled on Northeastern's Explorer cluster using NVIDIA P100/V100 GPUs with VTune and Nsight.</p>
+      <div class="project-meta">
+        <div class="project-tags">
+          <span class="tag">CUDA</span>
+          <span class="tag">OpenMP</span>
+          <span class="tag">C</span>
+          <span class="tag">HPC</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card fade-in delay-2">
+      <div class="project-icon">⚡</div>
+      <p class="project-name">In-Memory Compute on Zynq SoC</p>
+      <p class="project-desc">Custom AXI4-Lite/Stream IP cores with bare-metal C drivers for accelerated matrix operations on Xilinx Zynq. Full PS-PL pipeline with IMC architecture, debugged using Vivado ILA and JTAG.</p>
+      <div class="project-meta">
+        <div class="project-tags">
+          <span class="tag">Vivado</span>
+          <span class="tag">Vitis</span>
+          <span class="tag">C</span>
+          <span class="tag">AXI4</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card fade-in delay-3">
+      <div class="project-icon">🖼️</div>
+      <p class="project-name">FPGA Image Processing Pipeline</p>
+      <p class="project-desc">Custom image processing IP in Verilog for 3x3 convolution-based blur filtering on PYNQ-Z2. Implemented AXI DMA and VDMA controllers for high-throughput memory-to-stream transfers enabling real-time processing.</p>
+      <div class="project-meta">
+        <div class="project-tags">
+          <span class="tag">Verilog</span>
+          <span class="tag">PYNQ-Z2</span>
+          <span class="tag">DMA</span>
+          <span class="tag">VDMA</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card fade-in delay-4">
+      <div class="project-icon">🧠</div>
+      <p class="project-name">Hybrid Load Value Predictor</p>
+      <p class="project-desc">Combined LVP, SVP, and ACVP strategies under a confidence-based meta-predictor. Achieved 87 to 96% accuracy across 17.7M+ load operations with only 57KB storage. Debugged hash collisions using Pin instrumentation.</p>
+      <div class="project-meta">
+        <div class="project-tags">
+          <span class="tag">C</span>
+          <span class="tag">Pin</span>
+          <span class="tag">Computer Arch</span>
+        </div>
+        <a href="https://github.com/spanchal8/Hybrid-Load-Value-Predictor" class="project-link" target="_blank">GitHub →</a>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -452,16 +471,36 @@
     <div class="skill-group fade-in">
       <p class="skill-group-title">Languages</p>
       <div class="skill-items">
-        <span class="tag">C</span>
-        <span class="tag">Verilog</span>
         <span class="tag">Python</span>
+        <span class="tag">C</span>
+        <span class="tag">C++</span>
         <span class="tag">CUDA</span>
-        <span class="tag">RISC-V Assembly</span>
+        <span class="tag">Verilog</span>
+        <span class="tag">Embedded C</span>
+        <span class="tag">JavaScript</span>
         <span class="tag">MATLAB</span>
       </div>
     </div>
 
     <div class="skill-group fade-in delay-1">
+      <p class="skill-group-title">AI/ML & LLM Stack</p>
+      <div class="skill-items">
+        <span class="tag">PyTorch</span>
+        <span class="tag">TensorFlow</span>
+        <span class="tag">Scikit-learn</span>
+        <span class="tag">HuggingFace</span>
+        <span class="tag">LangChain</span>
+        <span class="tag">LangGraph</span>
+        <span class="tag">FAISS</span>
+        <span class="tag">ChromaDB</span>
+        <span class="tag">ONNX</span>
+        <span class="tag">Azure OpenAI</span>
+        <span class="tag">Prompt Engineering</span>
+        <span class="tag">MCP</span>
+      </div>
+    </div>
+
+    <div class="skill-group fade-in delay-2">
       <p class="skill-group-title">FPGA & Embedded</p>
       <div class="skill-items">
         <span class="tag">Xilinx Zynq SoC</span>
@@ -471,10 +510,11 @@
         <span class="tag">DMA / VDMA</span>
         <span class="tag">PYNQ-Z2</span>
         <span class="tag">Vivado ILA</span>
+        <span class="tag">JTAG</span>
       </div>
     </div>
 
-    <div class="skill-group fade-in delay-2">
+    <div class="skill-group fade-in delay-3">
       <p class="skill-group-title">HPC & GPU Systems</p>
       <div class="skill-items">
         <span class="tag">OpenMP</span>
@@ -489,20 +529,21 @@
       </div>
     </div>
 
-    <div class="skill-group fade-in delay-3">
-      <p class="skill-group-title">Tools & Platforms</p>
+    <div class="skill-group fade-in delay-4">
+      <p class="skill-group-title">Backend & DevOps</p>
       <div class="skill-items">
-        <span class="tag">Git</span>
-        <span class="tag">GCC</span>
-        <span class="tag">GDB</span>
-        <span class="tag">Linux</span>
-        <span class="tag">Make</span>
         <span class="tag">Flask</span>
         <span class="tag">FastAPI</span>
         <span class="tag">React</span>
-        <span class="tag">LangChain</span>
-        <span class="tag">LaTeX</span>
-        <span class="tag">JTAG</span>
+        <span class="tag">Streamlit</span>
+        <span class="tag">REST APIs</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Redis</span>
+        <span class="tag">Prometheus</span>
+        <span class="tag">Grafana</span>
+        <span class="tag">AWS</span>
+        <span class="tag">Git</span>
+        <span class="tag">Linux</span>
       </div>
     </div>
 
